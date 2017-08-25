@@ -1,0 +1,28 @@
+{
+  "person": [
+    "Andrew",
+    "Sarah",
+    "Bruce",
+    "Lisa"
+  ],
+
+  "place": [
+    "City Hall",
+    "Junior College",
+    "Grocery Store",
+    "Post Office"
+  ],
+
+  "thing": [
+    "Letter",
+    "Book",
+    "Key",
+    "Bag"
+  ],
+  "doop":[
+    "adoop",
+    "pooda",
+    "scooda",
+    "yuuda"
+  ]
+}

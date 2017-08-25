@@ -1,0 +1,15 @@
+{
+  "name": "swapper",
+  "version": "0.0.0",
+  "description": "A program that swaps words out of strings based on given identifiers.",
+  "main": "swapper.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "author": "Jedai Saboteur",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
