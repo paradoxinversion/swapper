@@ -1,6 +1,11 @@
 # swapper
 A program that swaps words out of strings based on given identifiers.
 
+Example
+Input Prompt: "[Person1] met [Person2] several years ago, they've been friends ever since."
+
+Output: "Andrew met Sarah several years ago, they've been friends ever since."
+
 Identifiers
 ---
 Identifiers (and what they can be swapped out for) exists in swap-list.json. The keys of this file are the identifiers you can use. Feel free to modify them.
