@@ -1,4 +1,4 @@
-
+#!/usr/bin/env node
 /*
   NODE REQUIREMENTS
 */
@@ -15,7 +15,6 @@ const NoIdentifierError = require("./error/NoIdentifierError.js");
   INPUT & ARGS
 */
 const inputStr = process.argv[2];
-
 /**
 * Swaps out Unique Identifiers in a string for predefined (but random) entries from a list
 * @param {String} swap_category the category to choose from
