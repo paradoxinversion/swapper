@@ -5,8 +5,6 @@
 */
 const getSwapList = require("./getSwapList.js");
 module.exports = function(){
-  //Let's access the JSON
   const swap_list_object = getSwapList();
-  //Consequently, this 
   return new RegExp("\\[(" + Object.keys(swap_list_object).join("|") + ")\\d\\]", "gi");
 };

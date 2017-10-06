@@ -21,7 +21,7 @@ const inputStr = process.argv[2];
 * @returns {String} the substition
 */
 const doSwap = function(){
-  let uniqueIdentifiers;
+  let uniqueIdentifiers; 
   let swapKey = {};
   console.log("Got prompt:", inputStr);
   try{
@@ -43,9 +43,11 @@ const doSwap = function(){
     console.log("Something went wrong getting unique identifiers. Make sure you have at least one [IdentifierNameX] where IdentifierName is a key in swap-list.json and X is an integer.");
   }
 };
-
-switch (process.argv[3]){
-case undefined:
-  doSwap();
-  break;
-}
+console.log(process.argv[2]);
+// switch (process.argv[2]){
+//
+// case typeof string:
+//   doSwap();
+//   break;
+// }
+doSwap();
