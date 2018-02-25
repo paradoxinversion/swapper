@@ -7,5 +7,4 @@ module.exports = function(identifier, swapList){
   const swap_categories = Object.keys(swapList).join("|");
   const regExp = new RegExp(swap_categories, "gi");
   return identifier.match(regExp)[0].toLowerCase();
-
 };

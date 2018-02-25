@@ -5,20 +5,16 @@ const Promise = require("bluebird");
 * @returns {Object} A new RegExp
 */
 const buildRegex = function(swapList){
-  return new Promise(function(resolve, reject){
+  try{
     const regex = new RegExp("\\[(" + Object.keys(swapList).join("|") + ")\\d\\]", "gi");
     if (regex){
-      resolve(regex);
+      return regex;
     } else{
-      reject(new Error("Somthing went wrong"));
+      const error = new Error("Error building regex");
+      throw error;
     }
-
-  }).catch(e => {
-    const error = new Error;
-    error.message = e.message;
-    error.stack = e.stack;
-    throw error;
-  });
-  // return new RegExp("\\[(" + Object.keys(swapList).join("|") + ")\\d\\]", "gi");
+  } catch (e){
+    console.log(e);
+  }
 };
 module.exports = buildRegex;

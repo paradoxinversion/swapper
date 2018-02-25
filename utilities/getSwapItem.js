@@ -4,6 +4,10 @@
 * @returns {String} the substition
 */
 module.exports = function(swapCategory, swapList){
+  if (swapCategory === "Noun"){
+    // random between person place or thing
+  }
+
   let swap_value_index = Math.floor(Math.random() * swapList[swapCategory].length);
   return swapList[swapCategory][swap_value_index];
 };
