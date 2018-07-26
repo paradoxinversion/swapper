@@ -4,11 +4,14 @@
   "description": "A program that swaps words out of strings based on given identifiers.",
   "main": "swapper.js",
   "scripts": {
+    "start": "parcel ./index.html",
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "Jedai Saboteur",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "mocha": "^3.5.0"
@@ -17,6 +20,11 @@
     "swapper": "./swapper.js"
   },
   "dependencies": {
-    "bluebird": "^3.5.1"
+    "babel-polyfill": "^6.26.0",
+    "bluebird": "^3.5.1",
+    "parcel-bundler": "^1.9.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }

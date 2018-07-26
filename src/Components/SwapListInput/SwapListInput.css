@@ -1,0 +1,12 @@
+.swap-list-input {
+  margin: 1rem 0;
+  font-size: 16px;
+}
+.swap-list-input__category {
+  font-size: inherit;
+}
+
+.swap-list-input__content {
+  font-size: inherit;
+  resize: none;
+}
