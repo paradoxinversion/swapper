@@ -50,13 +50,21 @@ class SwapListInput extends Component {
           onChange={this.handleChange}
         />
         <button
-          className="swap-list__button"
+          className="icon-button"
           onClick={() => {
-            this.props.removeCategory(this.props.swapArrayIndex);
+            if (
+              window.confirm(
+                `You're about to delete the "${
+                  this.state.category
+                }" category. Are you sure you want to do this?`
+              )
+            ) {
+              this.props.removeCategory(this.props.swapArrayIndex);
+            }
           }}>
           {" "}
-          <FontAwesomeIcon className="icon" icon="minus-circle" />
-          <p className="button__icon-label">Remove Category</p>
+          <FontAwesomeIcon icon="minus-circle" />
+          <p className="icon-button__label">Remove Category</p>
         </button>
       </div>
     );

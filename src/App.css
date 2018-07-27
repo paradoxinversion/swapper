@@ -27,12 +27,15 @@ button {
   border: 1px solid black;
   border-radius: 6px;
   padding: 8px;
-  width: 150px;
   align-self: center;
   margin: 16px;
 }
-.button__icon-label {
-  margin: 0 1rem;
+.icon-button {
+  display: flex;
+  align-items: center;
+}
+.icon-button__label {
+  margin: 0 1rem 0 0.5rem;
 }
 
 button:hover {

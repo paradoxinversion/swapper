@@ -1,15 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMinusCircle,
+  faPlusCircle,
+  faPencilAlt
+} from "@fortawesome/free-solid-svg-icons";
 
 import SwapListInput from "./Components/SwapListInput/SwapListInput";
-import "./reset.css";
 
+import "./reset.css";
 import "./App.css";
-library.add(faMinusCircle, faPlusCircle);
+
+library.add(faMinusCircle, faPlusCircle, faPencilAlt);
+
 const doSwap = require("./commands/doSwap");
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -148,8 +154,11 @@ class App extends React.Component {
             })
             .join(", ")}
         </p>
-        <button onClick={this.createFinalSwapList.bind(this)}>
-          Get your Prompt
+        <button
+          className="icon-button"
+          onClick={this.createFinalSwapList.bind(this)}>
+          <FontAwesomeIcon icon="pencil-alt" />
+          <p className="icon-button__label">Get your Prompt</p>
         </button>
         {this.state.output !== "" ? (
           <p id="output">{this.state.output}</p>
@@ -207,9 +216,9 @@ class App extends React.Component {
               </li>
             </ul>
           </div>
-          <button onClick={this.addCategory.bind(this)}>
+          <button className="icon-button" onClick={this.addCategory.bind(this)}>
             <FontAwesomeIcon icon="plus-circle" />{" "}
-            <p className="button__icon-label">Add Category</p>
+            <p className="icon-button__label">Add Category</p>
           </button>
           {this.state.swapArray.map((category, index, array) => {
             console.log(category);
