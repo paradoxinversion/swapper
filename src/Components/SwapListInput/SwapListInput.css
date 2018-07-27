@@ -17,3 +17,14 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.swap-list__button {
+  display: flex;
+  width: unset;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swap-list-button > icon + p {
+  color: red;
+}

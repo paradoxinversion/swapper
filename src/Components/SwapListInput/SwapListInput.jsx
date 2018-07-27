@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./SwapListInput.css";
 class SwapListInput extends Component {
   constructor(props) {
@@ -12,7 +14,6 @@ class SwapListInput extends Component {
   }
 
   async handleChange(event) {
-    // when something is modified, we should set the changes to an array if there is a newline
     const target = event.target;
     if (target.name === "category") {
       await this.setState({
@@ -49,10 +50,13 @@ class SwapListInput extends Component {
           onChange={this.handleChange}
         />
         <button
+          className="swap-list__button"
           onClick={() => {
             this.props.removeCategory(this.props.swapArrayIndex);
           }}>
-          Remove Category
+          {" "}
+          <FontAwesomeIcon className="icon" icon="minus-circle" />
+          <p className="button__icon-label">Remove Category</p>
         </button>
       </div>
     );

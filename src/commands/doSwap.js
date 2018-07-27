@@ -19,7 +19,6 @@ const doSwap = (inputStr, swapList) => {
           fullIdentifier,
           swapCategoryRegex.swapCategories
         );
-        console.log("fully stripped", strippedIdentifier);
         if (swapCategoryRegex.swapGroups.includes(strippedIdentifier)) {
           let randomSwapCategoryIndex = Math.floor(
             Math.random() * swapList[`sg:${strippedIdentifier}`].length
@@ -37,13 +36,11 @@ const doSwap = (inputStr, swapList) => {
     ) {
       return swapKey[match];
     });
-    console.log(finalString);
     return finalString;
   } catch (e) {
-    console.log(
+    const error = new Error(
       "Something went wrong getting unique identifiers. Make sure you have at least one [IdentifierNameX] where IdentifierName is a key in swap-list.json and X is an integer."
     );
-    const error = new Error();
     error.message = e.message;
     error.stack = e.stack;
     throw error;

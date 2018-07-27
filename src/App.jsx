@@ -1,9 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+
 import SwapListInput from "./Components/SwapListInput/SwapListInput";
 import "./reset.css";
 
 import "./App.css";
+library.add(faMinusCircle, faPlusCircle);
 const doSwap = require("./commands/doSwap");
 class App extends React.Component {
   constructor(props) {
@@ -44,24 +49,6 @@ class App extends React.Component {
     this.createSwapArray();
   }
 
-  renderSwapListInputs() {
-    return (
-      <React.Fragment>
-        {this.state.swapArray.map((category, index, array) => {
-          return (
-            <SwapListInput
-              category={category.category}
-              items={category.items}
-              key={index}
-              swapArrayIndex={index}
-              updateSwapListItems={this.updateSwapListItems.bind(this)}
-              removeCategory={this.removeCategory.bind(this)}
-            />
-          );
-        })}
-      </React.Fragment>
-    );
-  }
   handleChange(event) {
     const target = event.target;
     this.setState({
@@ -69,13 +56,11 @@ class App extends React.Component {
     });
   }
   async createFinalSwapList() {
-    console.log(this.state.swapArray);
     const swapList = {};
 
     this.state.swapArray.forEach(category => {
       swapList[category.category] = category.items;
     });
-    console.log(swapList);
     this.setState({
       output: await doSwap(this.state["user-prompt"], swapList)
     });
@@ -90,20 +75,19 @@ class App extends React.Component {
     this.setState({
       swapArray: originalSwapArray
     });
-    console.log(originalSwapArray);
   }
 
   /**
    * Removes a category from the swap array
    */
-  removeCategory(swapArrayIndex) {
+  async removeCategory(swapArrayIndex) {
+    console.log("Removing array index", swapArrayIndex);
     const originalSwapArray = this.state.swapArray;
     const remove = originalSwapArray.splice(swapArrayIndex, 1);
-    console.log(remove);
+    console.log(originalSwapArray);
     this.setState({
       swapArray: originalSwapArray
     });
-    console.log(originalSwapArray);
   }
 
   render() {
@@ -180,7 +164,6 @@ class App extends React.Component {
               await this.setState(prevState => ({
                 showAdvancedSettings: !prevState.showAdvancedSettings
               }));
-              console.log(this.state.showAdvancedSettings);
               if (this.state.showAdvancedSettings === true) {
                 document
                   .getElementById("swap-list-area")
@@ -224,8 +207,23 @@ class App extends React.Component {
               </li>
             </ul>
           </div>
-          <button onClick={this.addCategory.bind(this)}>Add Category</button>
-          {this.renderSwapListInputs()}
+          <button onClick={this.addCategory.bind(this)}>
+            <FontAwesomeIcon icon="plus-circle" />{" "}
+            <p className="button__icon-label">Add Category</p>
+          </button>
+          {this.state.swapArray.map((category, index, array) => {
+            console.log(category);
+            return (
+              <SwapListInput
+                category={category.category}
+                items={category.items}
+                key={category.category}
+                swapArrayIndex={index}
+                updateSwapListItems={this.updateSwapListItems.bind(this)}
+                removeCategory={this.removeCategory.bind(this)}
+              />
+            );
+          })}
         </div>
       </main>
     );
