@@ -4,7 +4,7 @@ const stripIdentifier = require("../utilities/stripIdentifier.js");
 const getSwapItem = require("../utilities/getSwapItem.js");
 const NoIdentifierError = require("../error/NoIdentifierError.js");
 
-const doSwap = async (inputStr, swapList) => {
+const doSwap = (inputStr, swapList) => {
   try {
     const swapCategoryRegex = buildRegex(swapList);
     let swapIdentifiers = returnUniqueIdentifiers(
@@ -19,13 +19,13 @@ const doSwap = async (inputStr, swapList) => {
           fullIdentifier,
           swapCategoryRegex.swapCategories
         );
+        console.log("fully stripped", strippedIdentifier);
         if (swapCategoryRegex.swapGroups.includes(strippedIdentifier)) {
           let randomSwapCategoryIndex = Math.floor(
             Math.random() * swapList[`sg:${strippedIdentifier}`].length
           );
           const category =
             swapList[`sg:${strippedIdentifier}`][randomSwapCategoryIndex];
-
           swapKey[fullIdentifier] = getSwapItem(category, swapList);
         } else {
           swapKey[fullIdentifier] = getSwapItem(strippedIdentifier, swapList);

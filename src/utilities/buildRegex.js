@@ -16,6 +16,7 @@ const buildRegex = swapList => {
       })
       .join("|");
     const regex = new RegExp("\\[(" + swapCategories + ")\\d\\]", "gi");
+    console.log(regex, swapCategories, swapGroups);
     if (regex) {
       return { regex, swapCategories, swapGroups };
     } else {

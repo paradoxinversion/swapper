@@ -11,15 +11,23 @@ class SwapListInput extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  async handleChange(event) {
     // when something is modified, we should set the changes to an array if there is a newline
     const target = event.target;
-    this.setState({
-      [target.name]: target.value,
-      rawItems: target.value.split("\n")
-    });
+    if (target.name === "category") {
+      await this.setState({
+        [target.name]: target.value
+      });
+    } else if (target.name === "stringified-items") {
+      await this.setState({
+        [target.name]: target.value,
+        rawItems: target.value.split("\n")
+      });
+    }
+
     this.props.updateSwapListItems(
       this.props.swapArrayIndex,
+      this.state.category,
       this.state.rawItems
     );
   }
@@ -40,6 +48,12 @@ class SwapListInput extends Component {
           value={this.state["stringified-items"]}
           onChange={this.handleChange}
         />
+        <button
+          onClick={() => {
+            this.props.removeCategory(this.props.swapArrayIndex);
+          }}>
+          Remove Category
+        </button>
       </div>
     );
   }

@@ -5,6 +5,9 @@
   "main": "swapper.js",
   "scripts": {
     "start": "parcel ./index.html",
+    "build": "parcel build index.html --target browser",
+    "serve": "NODE_ENV=production node server.js",
+    "heroku-postbuild": "npm run build",
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "Jedai Saboteur",
@@ -22,6 +25,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bluebird": "^3.5.1",
+    "express": "^4.16.3",
     "parcel-bundler": "^1.9.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",

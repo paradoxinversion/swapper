@@ -3,7 +3,7 @@
  * @param {String} swapCategory the category to choose from. It must exist in the JSON data.
  * @returns {String} the substition
  */
-module.exports = (swapCategory, swapList, swapGroups) => {
+module.exports = (swapCategory, swapList) => {
   let swap_value_index = Math.floor(
     Math.random() * swapList[swapCategory].length
   );

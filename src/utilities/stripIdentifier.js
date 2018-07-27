@@ -4,6 +4,16 @@
  * @returns {String} The stripped identifier (lower case)
  */
 module.exports = (identifier, swapCategories) => {
-  const regExp = new RegExp(swapCategories, "gi");
-  return identifier.match(regExp)[0].toLowerCase();
+  console.log(swapCategories);
+  const arr = swapCategories
+    .split("|")
+    .map(category => {
+      return category + "\\d";
+    })
+    .join("|");
+  console.log("arr", arr);
+  const regExp = new RegExp(arr, "gi");
+
+  const stripped = identifier.match(regExp)[0].toLowerCase();
+  return stripped.slice(0, stripped.length - 1);
 };
