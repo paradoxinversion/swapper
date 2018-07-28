@@ -181,7 +181,8 @@ class App extends React.Component {
           <div className="example margin-16-bottom">
             <p>
               You might get some of the same results more than once-- the
-              default lists are small, so that's expected.
+              default lists are small, so that's expected. You can edit them in
+              the Advanced Settings.
             </p>
             <p className="no-margin">
               There are some guidelines you can follow to make sure you have the
@@ -245,6 +246,7 @@ class App extends React.Component {
                   the best experience:
                 </p>
                 <ul>
+                  <li>Don't use capital letters in category names</li>
                   <li>Don't end category names with numbers</li>
                   <li>
                     Don't use symbols or special characters (eg, "?, *, $") in
@@ -253,7 +255,7 @@ class App extends React.Component {
                   <li>
                     If you want a category to refer to multiple other categories
                     (like Noun referring to Person, Place, and Thing), add "sg:"
-                    before the category name.
+                    before the category name
                   </li>
                 </ul>
               </div>
