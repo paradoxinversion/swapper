@@ -142,12 +142,13 @@ class App extends React.Component {
             className="example"
             onClick={() => {
               this.setState({
-                "user-prompt":
-                  "[person1] went to a concert with [person2] and they found a [thing1]. [person1] congratulated [person2] for their keen eye!"
+                "user-prompt": `[person1], a [adjective1] [persontype1] felt [feelings1] looking at the [thing1] in their hands, just given to them by their friend [person2]. [person1] decided they would go to the [placedescription1] [place1] to figure out what to do with it.`
               });
             }}>
-            [person1] went to a concert with [person2] and they found a
-            [thing1]. [person1] congratulated [person2] for their keen eye!
+            [person1], a [adjective1] [persontype1] felt [feelings1], looking at
+            the [thing1] in their hands, given to them by their friend
+            [person2]. [person1] decided they would go to the
+            [placedescription1] [place1] to figure out what to do with it.
           </p>
 
           <textarea
