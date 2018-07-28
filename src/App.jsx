@@ -110,10 +110,14 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <main>
+        <header id="main-header">
           <h1 className="title">Swapper</h1>
-          <p>Make your story prompts more personal</p>
-
+          <p className="subtitle margin-16-left-md">
+            Make your story prompts more personal
+          </p>
+        </header>
+        <main>
+          <h2>What is Swapper?</h2>
           <p>
             Swapper is a tool to help you generate unique fictional scenarios
             and writing prompts. With it, you can easily randomize characters,
@@ -123,13 +127,12 @@ class App extends React.Component {
           <h2>Using Swapper</h2>
           <p>
             Making a prompt requires one thing: At least one placeholder in your
-            text. <br /> Placeholders looking like this: [person1].
+            text. <br /> Placeholders look like this: [person1].
           </p>
           <p>
             A placeholder is just the category you want to switch words with,
             followed by a unique number (they don't have to be consecutive),
-            between two square brackets. You can reuse placeholders for
-            consistency.
+            between square brackets. You can reuse placeholders for consistency.
           </p>
           <p>
             Click the example below to copy it to the text area, then click the
@@ -207,58 +210,60 @@ class App extends React.Component {
                 if (this.state.showAdvancedSettings === true) {
                   document
                     .getElementById("swap-list-area")
-                    .classList.remove("swap-list-area--hidden");
+                    .classList.remove("hidden");
                 } else {
                   document
                     .getElementById("swap-list-area")
-                    .classList.add("swap-list-area--hidden");
+                    .classList.add("hidden");
                 }
               }}
             />{" "}
             <label htmlFor="advanced-settings"> Show Advanced Settings </label>
           </div>
 
-          <div
-            id="swap-list-area"
-            className="swap-list-area swap-list-area--hidden">
-            <div className="example  ">
-              <p>
-                This is where you can set your own categories and lists to swap
-                values from.{" "}
-              </p>
-              <p>
-                The top section of each box is the name of the Swap Swap
-                Category is represents and the larger text box contains all of
-                the possible replacements. Make sure each item is on a different
-                line. Your changes will last until you relead the page.{" "}
-              </p>
-              <p>
-                Don't worry if something breaks! You can always reload the page
-                and start fresh.{" "}
-              </p>
-              <p>
-                There are some guidelines you can follow to make sure you have
-                the best experience:
-              </p>
-              <ul>
-                <li>Don't end category names with numbers</li>
-                <li>
-                  Don't use symbols or special characters (eg, "?, *, $") in
-                  category names
-                </li>
-                <li>
-                  If you want a category to refer to multiple other categories
-                  (like Noun referring to Person, Place, and Thing), add "sg:"
-                  before the category name.
-                </li>
-              </ul>
+          <div id="swap-list-area" className="swap-list-area hidden">
+            <div>
+              <div className="example">
+                <p>
+                  This is where you can set your own categories and lists to
+                  swap values from.{" "}
+                </p>
+                <p>
+                  The top section of each box is the name of the Swap Swap
+                  Category is represents and the larger text box contains all of
+                  the possible replacements. Make sure each item is on a
+                  different line. Your changes will last until you relead the
+                  page.{" "}
+                </p>
+                <p>
+                  Don't worry if something breaks! You can always reload the
+                  page and start fresh.{" "}
+                </p>
+                <p>
+                  There are some guidelines you can follow to make sure you have
+                  the best experience:
+                </p>
+                <ul>
+                  <li>Don't end category names with numbers</li>
+                  <li>
+                    Don't use symbols or special characters (eg, "?, *, $") in
+                    category names
+                  </li>
+                  <li>
+                    If you want a category to refer to multiple other categories
+                    (like Noun referring to Person, Place, and Thing), add "sg:"
+                    before the category name.
+                  </li>
+                </ul>
+              </div>
+              <button
+                className="icon-button"
+                onClick={this.addCategory.bind(this)}>
+                <FontAwesomeIcon icon="plus-circle" />{" "}
+                <p className="icon-button__label">Add Category</p>
+              </button>
             </div>
-            <button
-              className="icon-button"
-              onClick={this.addCategory.bind(this)}>
-              <FontAwesomeIcon icon="plus-circle" />{" "}
-              <p className="icon-button__label">Add Category</p>
-            </button>
+
             {this.state.swapArray.map((category, index, array) => {
               return (
                 <SwapListInput
