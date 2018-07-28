@@ -1,7 +1,9 @@
 body {
   background-color: #f5f3f5;
   color: #1b264f;
+  font-family: "Roboto", Helvetica, sans-serif;
 }
+
 main {
   width: 90%;
   max-width: 800px;
@@ -9,7 +11,8 @@ main {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  font-family: "Roboto", Helvetica, sans-serif;
+  height: inherit;
+  flex: 1;
 }
 strong {
   font-weight: bold;
@@ -17,7 +20,10 @@ strong {
 h1 {
   font-size: 32px;
 }
-
+h2 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
 p {
   margin-bottom: 1rem;
   line-height: 20px;
@@ -30,17 +36,10 @@ button {
   align-self: center;
   margin: 16px;
 }
-.icon-button {
-  display: flex;
-  align-items: center;
-}
-.icon-button__label {
-  margin: 0 1rem 0 0.5rem;
-}
 
 button:hover {
   background: #67cb6f;
-  color: white;
+  color: #f5f3f5;
 }
 input {
   border: 1px solid grey;
@@ -51,9 +50,49 @@ ul {
   list-style: disc;
   list-style-position: inside;
 }
+li {
+  line-height: 20px;
+  margin-left: 1.5rem;
+}
 br {
   margin-bottom: 1rem;
 }
+
+footer {
+  display: flex;
+  font-size: 18px;
+  /* height: 60px; */
+  color: #f5f3f5;
+  background-color: #1b264f;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 16px;
+}
+.icon-button {
+  display: flex;
+  align-items: center;
+}
+.icon-button__label {
+  margin: 0 1rem 0 0.5rem;
+}
+.icon-link {
+  display: flex;
+  text-decoration: none;
+  color: #f5f3f5;
+}
+.icon-link:hover {
+  display: flex;
+  text-decoration: underline;
+}
+.app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* .page-content {
+  height: calc(100vh - 40px);
+} */
 .checkbox-container {
   display: flex;
   margin-bottom: 1rem;
@@ -66,10 +105,6 @@ br {
   /* vertical-align: bottom;
    */
   align-self: center;
-}
-
-div {
-  margin-bottom: 1rem;
 }
 
 .checkbox:checked {
@@ -111,4 +146,20 @@ textarea {
   font-size: 14px;
   padding: 1rem;
   border-radius: 6px;
+}
+
+/* Utility Classes */
+.no-margin {
+  margin: 0;
+}
+
+.margin-16-left {
+  margin: 0 0 0 16px;
+}
+
+.margin-16-bottom {
+  margin: 0 0 16px 0;
+}
+.margin-8-right {
+  margin: 0 8px 0 0;
 }

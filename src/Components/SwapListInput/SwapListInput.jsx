@@ -10,7 +10,6 @@ class SwapListInput extends Component {
       ["stringified-items"]: props.items.join("\n"),
       rawItems: props.items
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
   async handleChange(event) {
@@ -25,14 +24,14 @@ class SwapListInput extends Component {
         rawItems: target.value.split("\n")
       });
     }
-
+  }
+  async handleBlur(event) {
     this.props.updateSwapListItems(
       this.props.swapArrayIndex,
       this.state.category,
       this.state.rawItems
     );
   }
-
   render() {
     return (
       <div className="swap-list-input">
@@ -41,13 +40,15 @@ class SwapListInput extends Component {
           name="category"
           type="text"
           value={this.state.category}
-          onChange={this.handleChange}
+          onBlur={this.handleBlur.bind(this)}
+          onChange={this.handleChange.bind(this)}
         />
         <textarea
           className="swap-list-input__content"
           name="stringified-items"
           value={this.state["stringified-items"]}
-          onChange={this.handleChange}
+          onChange={this.handleChange.bind(this)}
+          onBlur={this.handleBlur.bind(this)}
         />
         <button
           className="icon-button"

@@ -1,7 +1,7 @@
-const buildRegex = require("../utilities/buildRegex.js");
-const returnUniqueIdentifiers = require("../utilities/returnUniqueIdentifiers.js");
-const stripIdentifier = require("../utilities/stripIdentifier.js");
-const getSwapItem = require("../utilities/getSwapItem.js");
+const buildRegex = require("./buildRegex.js");
+const returnUniqueIdentifiers = require("./returnUniqueIdentifiers.js");
+const stripIdentifier = require("./stripIdentifier.js");
+const getSwapItem = require("./getSwapItem.js");
 const NoIdentifierError = require("../error/NoIdentifierError.js");
 
 const doSwap = (inputStr, swapList) => {
