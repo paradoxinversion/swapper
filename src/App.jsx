@@ -197,6 +197,9 @@ class App extends React.Component {
               </li>
               <li>Do not include spaces in your Placeholders</li>
               <li>Only use Categories shown below the text area</li>
+              <li>
+                Share your favorite prompts on twitter with #SwapperPrompt!
+              </li>
             </ul>
           </div>
           <div className="checkbox-container">
