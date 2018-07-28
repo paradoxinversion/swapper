@@ -12,7 +12,6 @@ const returnUniqueIdentifiers = uniqueIdentifierArray => {
     if (uniqueIdentifierArray === null || uniqueIdentifierArray === []) {
       throw new NoIdentifierError();
     } else {
-      // ? Change to filter?
       uniqueIdentifierArray.forEach(function(element) {
         if (!processedIdentifiers.includes(element)) {
           processedIdentifiers.push(element);

@@ -39,6 +39,4 @@ Swap Identifiers tell Swapper what to swap. They are special bracketed markup co
 
 ## Swap Groups
 
-Swap Groups work similarly to Swap Categories, except that they (should) refer to Swap Categories. Swap Groups can be used in identifiers just like Swap Categories.
-
-### Swap Group Naming
+Swap Groups work similarly to Swap Categories, except that they (should) refer to Swap Categories. Swap Groups can be used in identifiers just like Swap Categories. To specify a swap group, prefix the group name with "sg:"
