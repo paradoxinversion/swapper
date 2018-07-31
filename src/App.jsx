@@ -288,7 +288,8 @@ class App extends React.Component {
           <a
             className="icon-link"
             href="https://github.com/paradoxinversion/swapper"
-            target="_blank">
+            target="_blank"
+            rel="noopener">
             <FontAwesomeIcon
               className="margin-16-left"
               icon={["fab", "github"]}
@@ -299,7 +300,8 @@ class App extends React.Component {
           <a
             className="icon-link"
             href="https://twitter.com/jedaisaboteur"
-            target="_blank">
+            target="_blank"
+            rel="noopener">
             <p className="no-margin">Follow Jedai on Twitter</p>
             <FontAwesomeIcon
               className="margin-16-left"
