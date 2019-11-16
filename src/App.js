@@ -11,9 +11,6 @@ import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import swapList from "./swapper/swap-lists/standard";
 import SwapListInput from "./Components/SwapListInput/SwapListInput";
 
-// import "./reset.css";
-// import "./App.css";
-
 library.add(
   faMinusCircle,
   faPlusCircle,
