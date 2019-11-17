@@ -5,7 +5,7 @@
   "main": "swapper.js",
   "scripts": {
     "start": "parcel ./index.html",
-    "build": "parcel build index.html --target browser",
+    "build": "parcel build index.html --public-url https://www.paradoxinversion.com/swapper/ --target browser",
     "serve": "NODE_ENV=production node server.js",
     "heroku-postbuild": "npm run build",
     "test": "./node_modules/.bin/mocha --reporter spec"
